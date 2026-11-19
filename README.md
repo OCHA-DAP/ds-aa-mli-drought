@@ -25,6 +25,9 @@ DSCI_AZ_DB_PROD_HOST=127.0.0.1:15433 uv run --with ocha-stratus --with psycopg2-
 cd scripts && uv run python check_reproduction.py   # must print REPRODUCED
 uv run python analysis.py                     # -> data/results.json
 uv run python check_no_lookahead.py           # must print NO LOOK-AHEAD: ALL CHECKS PASSED
+cd .. && DSCI_AZ_DB_DEV_HOST=127.0.0.1:15432 uv run --with ocha-stratus --with psycopg2-binary \
+    python scripts/fetch_impacts.py           # CERF (team mirror) + EM-DAT (team blob), read-only
+cd scripts && uv run python impacts.py        # season-by-season impact table -> data/impacts.json
 ```
 
 | file | what it does |
@@ -32,6 +35,7 @@ uv run python check_no_lookahead.py           # must print NO LOOK-AHEAD: ALL CH
 | `scripts/trigger.py` | IRI's threshold and rule logic (fixed / expanding / rolling, four rules, scoring) |
 | `scripts/check_reproduction.py` | compares against every table on IRI's page |
 | `scripts/analysis.py` | trend, skill, window sensitivity, shuffled-year expected frequency, 2026 |
+| `scripts/impacts.py` | CERF drought allocations, EM-DAT droughts and the Maproom bad-year list by season; hits and RPs per option |
 | `scripts/check_no_lookahead.py` | from-scratch rolling rule, leakage test (scramble later years), which window IRI used |
 
 `data/` and `build/` are gitignored. The restricted page is built by a gitignored generator

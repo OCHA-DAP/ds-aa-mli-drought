@@ -36,6 +36,7 @@ cd scripts && uv run python impacts.py        # season-by-season impact table ->
 | `scripts/check_reproduction.py` | compares against every table on IRI's page |
 | `scripts/analysis.py` | trend, skill, window sensitivity, shuffled-year expected frequency, 2026 |
 | `scripts/impacts.py` | CERF drought allocations, EM-DAT droughts and the Maproom bad-year list by season; hits and RPs per option |
+| `scripts/trend_check.py` | trend vs level shifts in the forecast (BIC), observed rainfall, SEAS5 and ENSO by period |
 | `scripts/check_no_lookahead.py` | from-scratch rolling rule, leakage test (scramble later years), which window IRI used |
 
 `data/` and `build/` are gitignored. The restricted page is built by a gitignored generator

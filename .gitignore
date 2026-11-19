@@ -7,3 +7,6 @@ data/
 scripts/page/gen_page.py
 scripts/page/template.html
 build/
+
+# diagnostics of IRI's privately shared PyCPT files (describe their content); keep local like the page source
+scripts/nextgen/

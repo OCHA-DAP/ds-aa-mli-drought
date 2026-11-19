@@ -7,13 +7,13 @@ Needs the DB tunnel (DSCI_AZ_DB_PROD_HOST=127.0.0.1:15433). Read-only.
 Usage: uv run --with ocha-stratus --with psycopg2-binary python scripts/fetch_era5.py
 """
 
-from pathlib import Path
 
 import ocha_stratus as stratus
 import pandas as pd
 from sqlalchemy import text
+from constants import data_dir  # noqa: E402
 
-OUT = Path(__file__).resolve().parents[1] / "data" / "era5_jas_national.csv"
+OUT = data_dir() / "era5_jas_national.csv"
 SQL = """
 select valid_date, mean from public.era5
 where iso3 = 'MLI' and adm_level = 0

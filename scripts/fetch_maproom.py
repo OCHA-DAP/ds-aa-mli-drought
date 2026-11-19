@@ -13,13 +13,13 @@ Usage: uv run python scripts/fetch_maproom.py
 """
 
 import time
-from pathlib import Path
 
 import pandas as pd
 import requests
+from constants import data_dir  # noqa: E402
 
 BASE = "https://iridl.ldeo.columbia.edu/fbfmaproom2/mali/export"
-OUT = Path(__file__).resolve().parents[1] / "data"
+OUT = data_dir()
 VERSIONS = ["prcp-v4", "prcp-v1"]
 ISSUE_MONTHS = ["jan", "feb", "mar", "apr", "may", "jun"]
 SEVERITIES = list(range(5, 55, 5))

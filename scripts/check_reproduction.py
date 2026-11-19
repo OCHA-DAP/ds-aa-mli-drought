@@ -8,14 +8,14 @@ export's pnep matches the page's raw table.
 Usage: uv run python scripts/check_reproduction.py
 """
 
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 import trigger as T
+from constants import data_dir  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 IRI = DATA / "iri_page"
 MAPROOM_THR = None  # set in main()
 RULE_KEY = {"rule_single": "single", "rule_2consec": "2consec", "rule_2in5": "2in5",

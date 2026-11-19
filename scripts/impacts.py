@@ -20,13 +20,13 @@ Usage: uv run python scripts/impacts.py
 """
 
 import json
-from pathlib import Path
 
 import pandas as pd
 
 import trigger as T
+from constants import data_dir  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 YEARS = list(range(2001, 2027))
 
 # EM-DAT record id -> rainy season it refers to (lean-season events go on the season before)

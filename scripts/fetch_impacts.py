@@ -14,14 +14,14 @@ Usage: DSCI_AZ_DB_DEV_HOST=127.0.0.1:15432 uv run --with ocha-stratus --with psy
 """
 
 import json
-from pathlib import Path
 
 import ocha_stratus as stratus
 import pandas as pd
 from ocha_stratus import emdat
 from sqlalchemy import text
+from constants import data_dir  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 
 SQL = """
 select a.application_code, a.year, a.window_name, a.emergency_type, a.title,

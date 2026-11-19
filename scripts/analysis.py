@@ -11,7 +11,6 @@ Usage: uv run python scripts/analysis.py
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -19,8 +18,9 @@ from numpy.lib.stride_tricks import sliding_window_view
 from scipy import stats
 
 import trigger as T
+from constants import data_dir  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 MONTHS = T.MONITOR_MONTHS
 SEVS = list(range(5, 50, 5))  # IRI's grid: 5..45
 Y0, Y_LAST_OBS = 1991, 2025

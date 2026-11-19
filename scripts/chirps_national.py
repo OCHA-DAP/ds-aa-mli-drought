@@ -19,8 +19,9 @@ import requests
 import shapely
 import xarray as xr
 from shapely.geometry import shape
+from constants import data_dir  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 DL = ("https://iridl.ldeo.columbia.edu/SOURCES/.UCSB/.CHIRPS/.v2p0/.monthly/.global/.precipitation/"
       "X/(-12.5)/(5)/RANGE/Y/(9)/(25)/RANGE/T/(Jul%20{y})/(Sep%20{y})/RANGE/data.nc")
 

@@ -24,12 +24,12 @@ Usage: cd scripts && uv run python check_no_lookahead.py
 
 import json
 import math
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from constants import data_dir  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 MONTHS = ["feb", "mar", "apr", "may", "jun"]
 SEVS = list(range(5, 50, 5))
 RULES = ["single", "2consec", "2in5", "3in5"]

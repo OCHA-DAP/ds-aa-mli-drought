@@ -18,14 +18,14 @@ Usage: uv run --with ocha-stratus --with psycopg2-binary python scripts/trend_ch
 
 import itertools
 import json
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import requests
 from scipy import stats
+from constants import data_dir  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[1] / "data"
+DATA = data_dir()
 MONTHS = ["feb", "mar", "apr", "may", "jun"]
 PER = {"1991-2000": (1991, 2000), "2001-2019": (2001, 2019), "2020-2025": (2020, 2025)}
 

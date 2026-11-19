@@ -12,13 +12,13 @@ Usage: uv run python scripts/fetch_iri_tables.py
 import html as htmllib
 import json
 import re
-from pathlib import Path
 
 import pandas as pd
 import requests
+from constants import data_dir  # noqa: E402
 
 URL = "https://fist.iri.columbia.edu/publications/docs/Mali_AA_OCHA_Framework_candidates/"
-OUT = Path(__file__).resolve().parents[1] / "data" / "iri_page"
+OUT = data_dir() / "iri_page"
 
 
 def widgets(page: str) -> list[pd.DataFrame]:

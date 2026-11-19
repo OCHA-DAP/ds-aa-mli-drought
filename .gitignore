@@ -1,0 +1,9 @@
+.DS_Store
+.venv/
+__pycache__/
+# data pulled from the IRI Maproom / IRI analysis page (regenerate with scripts/fetch_*.py)
+data/
+# page source and plaintext build stay out of git; only the encrypted page.enc is published
+scripts/page/gen_page.py
+scripts/page/template.html
+build/

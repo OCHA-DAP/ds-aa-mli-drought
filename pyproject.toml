@@ -1,0 +1,20 @@
+[project]
+name = "ds-aa-mli-drought"
+version = "0.1.0"
+description = "Mali drought anticipatory action: trigger analysis"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "requests>=2.32",
+    "scipy>=1.13",
+    "cryptography>=43",
+    "xarray>=2026.9.0",
+    "shapely>=2.2.0",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.6"]
+
+[tool.ruff]
+line-length = 100
